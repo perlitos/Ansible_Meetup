@@ -1,0 +1,5 @@
+---
+- hosts: meetup
+  sudo: true
+  roles:
+    - "{{ role }}"

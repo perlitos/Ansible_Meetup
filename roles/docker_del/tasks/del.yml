@@ -1,0 +1,5 @@
+---
+  - name: stop containers
+    shell: docker stop $(docker ps -q)
+  - name: remove containers
+    shell: docker rm $(docker ps -qa)

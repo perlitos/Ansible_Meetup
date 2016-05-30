@@ -1,0 +1,28 @@
+nginx:
+  image: "jwilder/nginx-proxy"
+  ports:
+    - "80:80"
+  volumes:
+    - "/var/run/docker.sock:/tmp/docker.sock:ro"
+MySQL:
+  image: mysql
+  volumes:
+    - /data/mysql:/var/lib/mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: {{ pass }}
+owncloud:
+  image: "owncloud"
+  links:
+    - MySQL
+  volumes:
+    - /data/oc/:/var/www/html/
+  environment:
+    VIRTUAL_HOST: owncloud
+Web:
+  image: "wordpress"
+  links:
+    - MySQL
+  volumes:
+    - /data/wp/:/var/www/html/
+  environment:
+    VIRTUAL_HOST: wordpress

@@ -1,0 +1,13 @@
+---
+  - name: copy docker-compose
+    template:
+      src: docker-compose.yml.j2
+      dest: /docker-compose.yml
+      force: yes
+  - name: run docker-compose file with Scaling
+    docker_service:
+      project_src: /tmp/
+      state: present
+      scale:
+        Web: 6
+        owncloud: 6

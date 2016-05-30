@@ -1,0 +1,8 @@
+---
+  - name: copy docker-compose
+    template:
+      src: docker-compose.yml.j2
+      dest: /tmp/docker-compose.yml
+  - name: run docker-compose file
+    shell: docker-compose -f /tmp/docker-compose.yml up -d --force-recreate
+

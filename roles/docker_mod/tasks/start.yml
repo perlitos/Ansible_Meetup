@@ -1,0 +1,38 @@
+---
+  - name: run Reverse Proxy
+    docker:
+      name: RVP
+      image: jwilder/nginx-proxy
+      ports:
+        80:80
+      volumes:
+        - /var/run/docker.sock:/tmp/docker.sock:ro
+  - name: create MySQL Container
+    docker:
+      name: MySQL
+      image: mysql
+      state: started
+      volumes:
+        - /data/mysql:/var/lib/mysql
+      env:
+        MYSQL_ROOT_PASSWORD="{{ pass }}""
+  - name: create WP Container
+    docker:
+      name: Web
+      image: wordpress
+      state: started
+      links: MySQL
+      volumes:
+        - /data/wp/:/var/www/html/
+      env:
+        VIRTUAL_HOST=wordpress
+  - name: create Oc Container
+    docker:
+      name: owncloud
+      image: owncloud
+      state: started
+      links: MySQL
+      volumes:
+        - /data/oc/:/var/www/html/
+      env:
+        VIRTUAL_HOST=owncloud
