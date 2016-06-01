@@ -1,6 +1,6 @@
 # Ansible_Meetup
 This Project starts 4 Docker Container
-
+<pre>
 +------------+
 | Reverse    |
 | Proxy      |
@@ -18,7 +18,7 @@ This Project starts 4 Docker Container
        +---------+             +------+   +--------------+
                  |             |
                  +-------------+
-
+</pre>
 ## Usage:
 - Edit hosts file for your remote host
 - Ensure you have access and sudo prvilege on your remote host
