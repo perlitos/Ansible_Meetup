@@ -44,5 +44,5 @@ This Project starts following Docker Container with different Ansibl Modules (se
   - # mysql -u root -p -e "create database <db>;"
   - # mysql -u root -p -e "create user <user>@'%' identified by <db>;"
   - # mysql -u root -p -e "grant all on <db>.* to <user>@'%';
-  - <ctlr> + d
+  - Exit Container
 
