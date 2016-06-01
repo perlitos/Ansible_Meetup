@@ -40,9 +40,9 @@ This Project starts following Docker Container with different Ansibl Modules (se
 ## Known Issues
 - the database-settings for MySQL integration in Ownlcoud has to be done manually 
 - Can be done like this:
-  - docker exec -ti <mysql-container> bash
-  - # mysql -u root -p -e "create database <db>;"
-  - # mysql -u root -p -e "create user <user>@'%' identified by <db>;"
-  - # mysql -u root -p -e "grant all on <db>.* to <user>@'%';
+  - `docker exec -ti <mysql-container> bash`
+  - `mysql -u root -p -e "create database <db>;"`
+  - `mysql -u root -p -e "create user <user>@'%' identified by <db>;"`
+  - `mysql -u root -p -e "grant all on <db>.* to <user>@'%';`
   - Exit Container
 
