@@ -1,6 +1,6 @@
 # Ansible Meetup - Managing Docker Containers
 This Project starts following Docker Container with different Ansibl Modules (see Available Roles for more Information)
-- Nginx Reverse Proxy
+- Jwilder Nginx Reverse Proxy
 - Wordpress 
 - OwnCloud
 - Mysql 
